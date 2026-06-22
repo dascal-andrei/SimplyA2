@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Simply A2 — Agenție de web design, content & media creation și tech consulting din România. Transformăm ideile tale în experiențe digitale memorabile." />
+  <meta name="keywords" content="web design, content creation, tech consulting, agenție digitală, România" />
+  <meta property="og:title" content="Simply A2 — Agenție Digitală" />
+  <meta property="og:description" content="Web design, content & media creation și tech consulting pentru afaceri ambițioase." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://simplya2.eu" />
+  <title>Simply A2 — Agenție Digitală</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════ -->
+  <nav class="nav" role="navigation" aria-label="Navigare principală">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="#" class="nav__logo">Simply<span>A2</span></a>
+
+        <ul class="nav__links" role="list">
+          <li><a href="#servicii">Servicii</a></li>
+          <li><a href="#portofoliu">Portofoliu</a></li>
+          <li><a href="#despre">Despre noi</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav__cta">
+          <a href="#contact" class="btn btn-primary">Solicită ofertă</a>
+        </div>
+
+        <button class="nav__hamburger" aria-label="Deschide meniu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu overlay -->
+    <div class="nav__mobile-menu" role="dialog" aria-label="Meniu mobil">
+      <a href="#servicii">Servicii</a>
+      <a href="#portofoliu">Portofoliu</a>
+      <a href="#despre">Despre noi</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-primary">Solicită ofertă</a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════ -->
+  <section class="hero" id="acasa" aria-label="Secțiunea principală">
+    <div class="hero__grid-bg" aria-hidden="true"></div>
+    <div class="hero__glow" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__badge">
+          <span class="dot" aria-hidden="true"></span>
+          Disponibili pentru proiecte noi
+        </div>
+
+        <h1 class="hero__title">
+          Construim<br />
+          <span class="gradient-text">prezențe digitale</span><br />
+          care contează.
+        </h1>
+
+        <p class="hero__desc">
+          Simply A2 este agenția ta partener pentru web design modern, content & media creation captivant și tech consulting strategic. Transformăm viziunea ta în rezultate reale.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#servicii" class="btn btn-primary">
+            Descoperă serviciile
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#portofoliu" class="btn btn-outline">Vezi portofoliul</a>
+        </div>
+
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <div class="hero__stat-value">
+              <span data-target="40" data-suffix="+">0+</span>
+            </div>
+            <div class="hero__stat-label">Proiecte finalizate</div>
+          </div>
+          <div class="hero__stat">
+            <div class="hero__stat-value">
+              <span data-target="98" data-suffix="%">0%</span>
+            </div>
+            <div class="hero__stat-label">Clienți mulțumiți</div>
+          </div>
+          <div class="hero__stat">
+            <div class="hero__stat-value">
+              <span data-target="3" data-suffix=" ani">0 ani</span>
+            </div>
+            <div class="hero__stat-label">Experiență</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SERVICII
+  ═══════════════════════════════════════════════ -->
+  <section class="services" id="servicii" aria-labelledby="services-title">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Ce facem</span>
+        <h2 class="section-title" id="services-title">
+          Servicii complete<br />
+          pentru <span>succesul tău</span>
+        </h2>
+        <p class="section-desc">
+          De la concept la lansare, acoperim tot ce ai nevoie pentru o prezență digitală puternică și coerentă.
+        </p>
+      </div>
+
+      <div class="services__grid">
+        <!-- Card 1: Web Design -->
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">🎨</div>
+          <h3 class="service-card__title">Web Design & Development</h3>
+          <p class="service-card__desc">
+            Site-uri și aplicații web cu design modern, performanță optimă și experiență utilizator impecabilă. Fiecare pixel contează.
+          </p>
+          <ul class="service-card__list" aria-label="Inclus în serviciu">
+            <li>Landing pages & site-uri prezentare</li>
+            <li>Magazine online (e-commerce)</li>
+            <li>Web apps & dashboard-uri</li>
+            <li>Optimizare SEO & performanță</li>
+            <li>Design responsive pentru orice device</li>
+          </ul>
+        </article>
+
+        <!-- Card 2: Content & Media -->
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">🎬</div>
+          <h3 class="service-card__title">Content & Media Creation</h3>
+          <p class="service-card__desc">
+            Conținut vizual și editorial care atrage, convinge și convertește. Povestea brandului tău spusă cu impact maxim.
+          </p>
+          <ul class="service-card__list" aria-label="Inclus în serviciu">
+            <li>Fotografie & videografie profesională</li>
+            <li>Copywriting & content strategy</li>
+            <li>Social media management</li>
+            <li>Grafică & identitate vizuală</li>
+            <li>Animații & motion graphics</li>
+          </ul>
+        </article>
+
+        <!-- Card 3: Tech Consulting -->
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">⚙️</div>
+          <h3 class="service-card__title">Tech Consulting</h3>
+          <p class="service-card__desc">
+            Consultanță tehnică strategică pentru a lua deciziile corecte în digitalizare, automatizare și alegerea stack-ului potrivit.
+          </p>
+          <ul class="service-card__list" aria-label="Inclus în serviciu">
+            <li>Audit tehnic & recomandări</li>
+            <li>Arhitectură software & cloud</li>
+            <li>Automatizări & integrări API</li>
+            <li>Securitate & conformitate GDPR</li>
+            <li>Mentenanță & suport tehnic</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       PORTOFOLIU
+  ═══════════════════════════════════════════════ -->
+  <section class="portfolio" id="portofoliu" aria-labelledby="portfolio-title">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-label">Lucrările noastre</span>
+        <h2 class="section-title" id="portfolio-title">
+          Proiecte în care<br />
+          suntem <span>mândri</span>
+        </h2>
+        <p class="section-desc">
+          Fiecare proiect este o poveste unică. Iată câteva dintre colaborările noastre de succes.
+        </p>
+      </div>
+
+      <div class="portfolio__filter" role="group" aria-label="Filtrează proiectele">
+        <button class="filter-btn active" data-filter="all">Toate</button>
+        <button class="filter-btn" data-filter="web">Web Design</button>
+        <button class="filter-btn" data-filter="content">Content</button>
+        <button class="filter-btn" data-filter="tech">Tech</button>
+      </div>
+
+      <div class="portfolio__grid">
+        <!-- Proiect 1 -->
+        <article class="portfolio-card" data-category="web">
+          <div class="portfolio-card__thumb">
+            <div class="portfolio-card__thumb-placeholder" aria-hidden="true">🏪</div>
+            <div class="portfolio-card__thumb-overlay">
+              <a href="#" aria-label="Vezi proiectul BoutiqueX">Vezi proiectul →</a>
+            </div>
+          </div>
+          <div class="portfolio-card__body">
+            <p class="portfolio-card__tag">Web Design</p>
+            <h3 class="portfolio-card__title">BoutiqueX — E-commerce Fashion</h3>
+            <p class="portfolio-card__desc">Shop online complet cu sistem de plăți, management produse și experiență mobilă nativă.</p>
+          </div>
+        </article>
+
+        <!-- Proiect 2 -->
+        <article class="portfolio-card" data-category="content">
+          <div class="portfolio-card__thumb">
+            <div class="portfolio-card__thumb-placeholder" aria-hidden="true">📸</div>
+            <div class="portfolio-card__thumb-overlay">
+              <a href="#" aria-label="Vezi proiectul RestaurantX">Vezi proiectul →</a>
+            </div>
+          </div>
+          <div class="portfolio-card__body">
+            <p class="portfolio-card__tag">Content & Media</p>
+            <h3 class="portfolio-card__title">RestaurantX — Campanie vizuală</h3>
+            <p class="portfolio-card__desc">Fotografie culinară, videoclipuri reel și strategie social media care a crescut engagement-ul cu 340%.</p>
+          </div>
+        </article>
+
+        <!-- Proiect 3 -->
+        <article class="portfolio-card" data-category="tech">
+          <div class="portfolio-card__thumb">
+            <div class="portfolio-card__thumb-placeholder" aria-hidden="true">📊</div>
+            <div class="portfolio-card__thumb-overlay">
+              <a href="#" aria-label="Vezi proiectul LogiCorp">Vezi proiectul →</a>
+            </div>
+          </div>
+          <div class="portfolio-card__body">
+            <p class="portfolio-card__tag">Tech Consulting</p>
+            <h3 class="portfolio-card__title">LogiCorp — Automatizare procese</h3>
+            <p class="portfolio-card__desc">Audit tehnic, migrare cloud și implementare automatizări care au redus costurile operaționale cu 60%.</p>
+          </div>
+        </article>
+
+        <!-- Proiect 4 -->
+        <article class="portfolio-card" data-category="web">
+          <div class="portfolio-card__thumb">
+            <div class="portfolio-card__thumb-placeholder" aria-hidden="true">🏥</div>
+            <div class="portfolio-card__thumb-overlay">
+              <a href="#" aria-label="Vezi proiectul MedClinic">Vezi proiectul →</a>
+            </div>
+          </div>
+          <div class="portfolio-card__body">
+            <p class="portfolio-card__tag">Web Design</p>
+            <h3 class="portfolio-card__title">MedClinic — Site prezentare</h3>
+            <p class="portfolio-card__desc">Site modern pentru clinică medicală cu sistem de programări online și conformitate GDPR completă.</p>
+          </div>
+        </article>
+
+        <!-- Proiect 5 -->
+        <article class="portfolio-card" data-category="content">
+          <div class="portfolio-card__thumb">
+            <div class="portfolio-card__thumb-placeholder" aria-hidden="true">🎵</div>
+            <div class="portfolio-card__thumb-overlay">
+              <a href="#" aria-label="Vezi proiectul SoundLab">Vezi proiectul →</a>
+            </div>
+          </div>
+          <div class="portfolio-card__body">
+            <p class="portfolio-card__tag">Content & Media</p>
+            <h3 class="portfolio-card__title">SoundLab — Brand identity</h3>
+            <p class="portfolio-card__desc">Identitate vizuală completă, motion graphics și conținut pentru lansarea unui studio de înregistrări.</p>
+          </div>
+        </article>
+
+        <!-- Proiect 6 -->
+        <article class="portfolio-card" data-category="tech">
+          <div class="portfolio-card__thumb">
+            <div class="portfolio-card__thumb-placeholder" aria-hidden="true">🚀</div>
+            <div class="portfolio-card__thumb-overlay">
+              <a href="#" aria-label="Vezi proiectul StartupX">Vezi proiectul →</a>
+            </div>
+          </div>
+          <div class="portfolio-card__body">
+            <p class="portfolio-card__tag">Tech Consulting</p>
+            <h3 class="portfolio-card__title">StartupX — MVP & arhitectură</h3>
+            <p class="portfolio-card__desc">Consultanță end-to-end pentru construirea MVP-ului: tech stack, arhitectură scalabilă și strategie go-to-market.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       DESPRE NOI
+  ═══════════════════════════════════════════════ -->
+  <section class="about" id="despre" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about__inner">
+        <!-- Visual side -->
+        <div class="about__visual" aria-hidden="true">
+          <div class="about__card-main">
+            <div class="about__avatar-group">
+              <div class="about__avatar">👩‍💻</div>
+              <div class="about__avatar">👨‍🎨</div>
+              <div class="about__avatar">👨‍💼</div>
+            </div>
+            <div class="about__card-stat">
+              <span data-target="40" data-suffix="+">40+</span>
+            </div>
+            <div class="about__card-text">proiecte livrate cu succes, de la startup-uri la companii mid-size.</div>
+          </div>
+
+          <div class="about__card-floating about__card-floating--top">
+            <div class="floating-icon green">✅</div>
+            <div class="floating-label">
+              <strong>Livrare la timp</strong>
+              100% din proiecte respectă deadline-ul
+            </div>
+          </div>
+
+          <div class="about__card-floating about__card-floating--bottom">
+            <div class="floating-icon orange">⚡</div>
+            <div class="floating-label">
+              <strong>Răspuns rapid</strong>
+              Sub 24h timp de răspuns garantat
+            </div>
+          </div>
+        </div>
+
+        <!-- Text side -->
+        <div class="about__text">
+          <span class="section-label">Despre noi</span>
+          <h2 class="section-title" id="about-title">
+            Nu suntem o agenție<br />
+            obișnuită. <span>Suntem parteneri.</span>
+          </h2>
+          <p class="section-desc">
+            Simply A2 s-a născut din pasiunea pentru design curat, tehnologie bine folosită și conținut care comunică. Credem că fiecare afacere merită o prezență digitală care să o reprezinte cu adevărat.
+          </p>
+          <p class="section-desc">
+            Lucrăm ca o echipă mică și dedicată — asta înseamnă comunicare directă, flexibilitate maximă și atenție la fiecare detaliu al proiectului tău.
+          </p>
+
+          <div class="about__values">
+            <div class="about__value">
+              <div class="about__value-icon">🎯</div>
+              <div class="about__value-title">Orientați spre rezultate</div>
+              <div class="about__value-desc">Frumusețea nu e suficientă dacă nu convertește. Designul nostru este mereu strategic.</div>
+            </div>
+            <div class="about__value">
+              <div class="about__value-icon">🔍</div>
+              <div class="about__value-title">Atenție la detalii</div>
+              <div class="about__value-desc">Fiecare pixel, fiecare cuvânt, fiecare interacțiune contează în experiența finală.</div>
+            </div>
+            <div class="about__value">
+              <div class="about__value-icon">🤝</div>
+              <div class="about__value-title">Transparență totală</div>
+              <div class="about__value-desc">Comunici direct cu oamenii care lucrează la proiectul tău, fără intermediari.</div>
+            </div>
+            <div class="about__value">
+              <div class="about__value-icon">🚀</div>
+              <div class="about__value-title">Scalabilitate</div>
+              <div class="about__value-desc">Construim pentru viitor. Soluțiile noastre cresc odată cu afacerea ta.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════════════ -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact__inner">
+        <!-- Info -->
+        <div class="contact__info">
+          <span class="section-label">Hai să vorbim</span>
+          <h2 class="contact__info-title" id="contact-title">
+            Proiectul tău<br />începe cu o conversație.
+          </h2>
+          <p class="contact__info-desc">
+            Fie că ai o idee vagă sau un brief complet — suntem gata să ascultăm și să propunem soluția potrivită pentru tine.
+          </p>
+
+          <div class="contact__details">
+            <div class="contact__detail">
+              <div class="contact__detail-icon" aria-hidden="true">📧</div>
+              <div>
+                <div class="contact__detail-label">Email</div>
+                <div class="contact__detail-value">
+                  <a href="mailto:contact@simplya2.eu">contact@simplya2.eu</a>
+                </div>
+              </div>
+            </div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon" aria-hidden="true">📞</div>
+              <div>
+                <div class="contact__detail-label">Telefon</div>
+                <div class="contact__detail-value">
+                  <a href="tel:+40700000000">+40 700 000 000</a>
+                </div>
+              </div>
+            </div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon" aria-hidden="true">📍</div>
+              <div>
+                <div class="contact__detail-label">Locație</div>
+                <div class="contact__detail-value">România · Remote Friendly</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact__social" aria-label="Rețele sociale">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Behance">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7.443 5.35c.639 0 1.23.05 1.77.198.541.099.984.297 1.377.544.394.247.689.594.885 1.039.197.445.296.989.296 1.583 0 .693-.148 1.286-.493 1.731-.295.446-.788.841-1.377 1.138.836.248 1.475.694 1.869 1.287.394.594.591 1.287.591 2.127 0 .693-.148 1.336-.394 1.831-.245.495-.64.94-1.082 1.286-.443.346-1.033.594-1.623.742-.59.148-1.23.198-1.869.198H2V5.35h5.443zm-.246 5.69c.541 0 .984-.148 1.328-.396.344-.247.492-.693.492-1.237 0-.297-.049-.544-.148-.791-.098-.197-.246-.395-.443-.494-.197-.099-.394-.198-.64-.247-.247-.05-.492-.05-.787-.05H4.918v3.265h2.279v-.05zm.148 5.988c.295 0 .59-.05.836-.099.245-.099.49-.198.688-.346.197-.148.344-.346.443-.594.098-.247.148-.544.148-.89 0-.693-.197-1.188-.59-1.484-.394-.297-.935-.446-1.574-.446H4.918v3.859h2.427zM15.557 15.7c.394.396.984.594 1.77.594.54 0 1.033-.148 1.426-.445.394-.297.639-.594.738-.94h2.328c-.394 1.237-1.033 2.077-1.82 2.572-.787.495-1.77.742-2.869.742-.788 0-1.524-.148-2.164-.396-.64-.248-1.18-.594-1.622-1.039-.443-.445-.788-.989-1.033-1.632-.246-.643-.394-1.336-.394-2.127 0-.742.148-1.484.394-2.127.246-.643.59-1.188 1.033-1.632.443-.445.983-.791 1.623-1.039.64-.247 1.327-.396 2.065-.396.836 0 1.574.149 2.213.495.639.346 1.18.791 1.574 1.336.394.544.688 1.188.836 1.88.147.693.197 1.435.147 2.177h-6.953c.049.89.295 1.583.689 1.977zM17.18 10.01c-.344 0-.639.05-.885.148-.245.1-.491.248-.639.446-.147.198-.295.396-.394.644-.099.247-.147.544-.197.84h4.001c-.049-.74-.295-1.285-.64-1.681-.343-.297-.836-.397-1.246-.397zM14.213 6.19h4.886v1.287h-4.886V6.19z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact__form">
+          <form novalidate aria-label="Formular de contact">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="name">Nume</label>
+                <input class="form-control" type="text" id="name" name="name" placeholder="Ion Popescu" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" type="email" id="email" name="email" placeholder="ion@companie.ro" required autocomplete="email" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="company">Companie (opțional)</label>
+              <input class="form-control" type="text" id="company" name="company" placeholder="Compania SRL" autocomplete="organization" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="service">Serviciu de interes</label>
+              <select class="form-control form-select" id="service" name="service">
+                <option value="">Selectează un serviciu...</option>
+                <option value="web">Web Design & Development</option>
+                <option value="content">Content & Media Creation</option>
+                <option value="tech">Tech Consulting</option>
+                <option value="package">Pachet complet</option>
+                <option value="other">Altceva</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Mesaj</label>
+              <textarea class="form-control" id="message" name="message" placeholder="Descrie pe scurt proiectul tău, obiectivele și orice detalii relevante..." required></textarea>
+            </div>
+
+            <div class="form-submit-row">
+              <p class="form-note">
+                Prin trimitere, ești de acord cu <a href="#">Politica de confidențialitate</a>.
+              </p>
+              <button type="submit" class="btn btn-primary">
+                Trimite mesajul
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+
+          <div class="form-success" role="alert" aria-live="polite">
+            <div style="font-size:3rem;margin-bottom:16px">✅</div>
+            <h3 style="font-size:1.3rem;font-weight:800;color:var(--clr-white);margin-bottom:8px">Mesaj trimis cu succes!</h3>
+            <p style="color:var(--clr-text-muted);font-size:0.95rem">Îți vom răspunde în maximum 24 de ore. Mulțumim că ai ales Simply A2!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__logo">Simply<span>A2</span></div>
+
+        <nav class="footer__links" aria-label="Link-uri footer">
+          <a href="#servicii">Servicii</a>
+          <a href="#portofoliu">Portofoliu</a>
+          <a href="#despre">Despre noi</a>
+          <a href="#contact">Contact</a>
+          <a href="#">Politică de confidențialitate</a>
+        </nav>
+      </div>
+
+      <p class="footer__copy">
+        &copy; <span id="year"></span> Simply A2. Toate drepturile rezervate. Construit cu ❤️ în România.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" aria-label="Înapoi sus">↑</button>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>
