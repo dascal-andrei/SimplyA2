@@ -176,9 +176,10 @@ input, textarea, select { font-family: inherit; }
 .nav__logo {
   font-size: 1.3rem;
   font-weight: 600;
-  font-family: var(--font-heading);
+  font-family: 'Gloock', Georgia, serif;
   letter-spacing: -0.01em;
   color: var(--clr-text-on-dark);
+  margin-left: -10px;
 }
 .nav__logo span { color: var(--clr-primary); }
 
