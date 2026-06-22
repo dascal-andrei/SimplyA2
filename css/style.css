@@ -32,7 +32,7 @@
 
   --clr-white:          #ffffff;
 
-  --font-heading: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-heading: 'Gloock', Georgia, serif;
   --font-body:    'Inter', 'Segoe UI', system-ui, sans-serif;
 
   --radius:         12px;
@@ -72,7 +72,7 @@ input, textarea, select { font-family: inherit; }
 .section-label {
   display: inline-block;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--clr-primary);
@@ -85,9 +85,10 @@ input, textarea, select { font-family: inherit; }
 
 .section-title {
   font-size: clamp(2rem, 4vw, 2.8rem);
-  font-weight: 800;
+  font-family: var(--font-heading);
+  font-weight: 400;
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   margin-bottom: 16px;
   color: var(--clr-dark);
 }
@@ -159,8 +160,8 @@ input, textarea, select { font-family: inherit; }
 }
 .nav__logo {
   font-size: 1.3rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--clr-text-on-dark);
 }
 .nav__logo span { color: var(--clr-primary); }
@@ -268,9 +269,10 @@ input, textarea, select { font-family: inherit; }
 }
 .hero__title {
   font-size: clamp(2.8rem, 6vw, 5rem);
-  font-weight: 900;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
   margin-bottom: 24px;
   color: var(--clr-text-on-dark);
 }
@@ -297,7 +299,7 @@ input, textarea, select { font-family: inherit; }
 .hero__stats { display: flex; gap: 48px; flex-wrap: wrap; }
 .hero__stat-value {
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--clr-bg-alt);
   line-height: 1;
   margin-bottom: 4px;
@@ -350,7 +352,7 @@ input, textarea, select { font-family: inherit; }
 }
 .service-card__title {
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--clr-dark);
   margin-bottom: 12px;
   position: relative; z-index: 1;
@@ -444,13 +446,13 @@ input, textarea, select { font-family: inherit; }
 }
 .portfolio-card__body { padding: 24px 28px; }
 .portfolio-card__tag {
-  font-size: 0.75rem; font-weight: 700;
+  font-size: 0.75rem; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.1em;
   color: var(--clr-primary);
   margin-bottom: 8px;
 }
 .portfolio-card__title {
-  font-size: 1.1rem; font-weight: 700;
+  font-size: 1.1rem; font-weight: 600;
   color: var(--clr-dark);
   margin-bottom: 8px;
 }
@@ -501,7 +503,9 @@ input, textarea, select { font-family: inherit; }
   margin-right: -12px;
 }
 .about__card-stat {
-  font-size: 2.5rem; font-weight: 900;
+  font-size: 2.5rem;
+  font-family: var(--font-heading);
+  font-weight: 400;
   color: var(--clr-dark);
   line-height: 1;
 }
@@ -535,7 +539,7 @@ input, textarea, select { font-family: inherit; }
   display: block;
   font-size: 0.9rem;
   color: var(--clr-dark);
-  font-weight: 700;
+  font-weight: 600;
 }
 .about__text .section-desc { margin-bottom: 24px; }
 .about__values {
@@ -552,7 +556,7 @@ input, textarea, select { font-family: inherit; }
 }
 .about__value-icon { font-size: 1.5rem; margin-bottom: 10px; }
 .about__value-title {
-  font-size: 0.9rem; font-weight: 700;
+  font-size: 0.9rem; font-weight: 600;
   color: var(--clr-dark);
   margin-bottom: 4px;
 }
@@ -575,9 +579,12 @@ input, textarea, select { font-family: inherit; }
   align-items: start;
 }
 .contact__info-title {
-  font-size: 1.8rem; font-weight: 800;
+  font-size: 1.8rem;
+  font-family: var(--font-heading);
+  font-weight: 400;
   color: var(--clr-text-on-dark);
-  margin-bottom: 16px; letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
 }
 .contact__info-desc {
   font-size: 0.95rem;
@@ -691,8 +698,8 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   justify-content: space-between; flex-wrap: wrap; gap: 24px;
 }
 .footer__logo {
-  font-size: 1.1rem; font-weight: 800;
-  color: var(--clr-text-on-dark); letter-spacing: -0.02em;
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--clr-text-on-dark); letter-spacing: -0.01em;
 }
 .footer__logo span { color: var(--clr-primary); }
 .footer__links { display: flex; gap: 28px; }
