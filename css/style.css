@@ -320,21 +320,9 @@ input, textarea, select { font-family: inherit; }
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 72px;
+  margin-bottom: 0;
 }
-.hero__stats { display: flex; gap: 48px; flex-wrap: wrap; }
-.hero__stat-value {
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--clr-bg-alt);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.hero__stat-label {
-  font-size: 0.85rem;
-  color: var(--clr-text-muted-dark);
-  font-weight: 500;
-}
+
 
 /* ── Services — crem (#E6E6CF) ──────────────────────── */
 .services { padding: var(--section-gap) 0; }
@@ -854,8 +842,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
 
 @media (max-width: 600px) {
   :root { --section-gap: 64px; }
-  .hero__stats  { gap: 28px; }
-  .hero__actions { flex-direction: column; align-items: flex-start; }
+.hero__actions { flex-direction: column; align-items: flex-start; }
   .hero__badge  { align-self: flex-start; }
   .portfolio__grid  { grid-template-columns: 1fr; }
   .services__grid   { grid-template-columns: 1fr; }
