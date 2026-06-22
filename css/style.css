@@ -208,6 +208,8 @@ input, textarea, select { font-family: inherit; }
 
 .nav__cta { display: flex; }
 
+.nav__mobile-menu { display: none; }
+
 .nav__hamburger {
   display: none;
   flex-direction: column;
