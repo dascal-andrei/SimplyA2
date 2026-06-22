@@ -2,6 +2,14 @@
    Simply A2 — Main Stylesheet
    ===================================================== */
 
+@font-face {
+  font-family: 'Wister';
+  src: url('../assets/fonts/Wister-Demo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* ── Paletă ────────────────────────────────────── */
   --clr-primary:        #490518;           /* roșu vișiniu */
@@ -32,8 +40,8 @@
 
   --clr-white:          #ffffff;
 
-  --font-heading: 'Gloock', Georgia, serif;
-  --font-body:    'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-heading: 'Wister', Georgia, serif;
+  --font-body:    'Gloock', Georgia, serif;
 
   --radius:         12px;
   --radius-lg:      20px;
