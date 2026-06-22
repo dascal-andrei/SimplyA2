@@ -187,8 +187,8 @@ input, textarea, select { font-family: inherit; }
 }
 .nav__links a {
   font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--clr-text-muted-dark);
+  font-weight: 700;
+  color: #E6E6CF;
   transition: color var(--transition);
   position: relative;
 }
@@ -203,7 +203,7 @@ input, textarea, select { font-family: inherit; }
 }
 .nav__links a:hover,
 .nav__links a.active {
-  color: var(--clr-text-on-dark);
+  color: #ffffff;
 }
 .nav__links a:hover::after,
 .nav__links a.active::after { width: 100%; }
