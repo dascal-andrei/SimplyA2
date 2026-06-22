@@ -352,7 +352,30 @@ input, textarea, select { font-family: inherit; }
 
 
 /* ── Services — crem (#E6E6CF) ──────────────────────── */
-.services { padding: var(--section-gap) 0; }
+.services {
+  padding: var(--section-gap) 0;
+  position: relative;
+  overflow: hidden;
+}
+.services__deco {
+  position: absolute;
+  pointer-events: none;
+}
+.services__deco--arc {
+  top: -90px;
+  right: -90px;
+  opacity: 0.09;
+}
+.services__deco--sparkle {
+  bottom: 72px;
+  left: 48px;
+  opacity: 0.32;
+}
+.services__deco--cross {
+  top: 50%;
+  right: 36px;
+  opacity: 0.22;
+}
 .services__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -568,6 +591,32 @@ input, textarea, select { font-family: inherit; }
 .about {
   padding: var(--section-gap) 0;
   background: var(--clr-bg-alt);
+  position: relative;
+  overflow: hidden;
+}
+.about__deco {
+  position: absolute;
+  pointer-events: none;
+}
+.about__deco--sparkle {
+  top: 10%;
+  right: 6%;
+  opacity: 0.5;
+}
+.about__deco--rings {
+  bottom: -50px;
+  left: -50px;
+  opacity: 0.08;
+}
+.about__deco--cross {
+  top: 15%;
+  left: 5%;
+  opacity: 0.25;
+}
+.about__deco--dots {
+  bottom: 12%;
+  right: 5%;
+  opacity: 0.14;
 }
 .about__inner {
   display: grid;
