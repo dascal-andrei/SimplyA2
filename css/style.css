@@ -252,6 +252,33 @@ input, textarea, select { font-family: inherit; }
   background: radial-gradient(ellipse, rgba(73, 5, 24, 0.18) 0%, transparent 70%);
   pointer-events: none;
 }
+/* ── Decorațiuni geometrice hero ──────────────────────── */
+.hero__deco {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+.hero__deco--sparkle {
+  top: 14%;
+  right: 8%;
+  opacity: 0.72;
+}
+.hero__deco--rings {
+  bottom: -60px;
+  right: -60px;
+  opacity: 0.07;
+}
+.hero__deco--cross {
+  top: 46%;
+  left: 5%;
+  opacity: 0.4;
+}
+.hero__deco--dot {
+  top: 28%;
+  left: 38%;
+  opacity: 0.35;
+}
+
 .hero__content {
   position: relative;
   z-index: 2;
@@ -355,6 +382,20 @@ input, textarea, select { font-family: inherit; }
   box-shadow: 0 8px 28px rgba(45, 60, 35, 0.20);
 }
 .service-card:hover::before { opacity: 1; }
+.service-card::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 14px;
+  height: 14px;
+  background:
+    linear-gradient(var(--clr-secondary), var(--clr-secondary)) center / 2px 100% no-repeat,
+    linear-gradient(var(--clr-secondary), var(--clr-secondary)) center / 100% 2px no-repeat;
+  opacity: 0.18;
+  z-index: 2;
+  border-radius: 1px;
+}
 .service-card__icon {
   width: 56px; height: 56px;
   border-radius: 14px;
@@ -433,6 +474,12 @@ input, textarea, select { font-family: inherit; }
   background: var(--clr-primary);
   border-color: var(--clr-primary);
   color: var(--clr-white);
+}
+
+.portfolio__deco {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
 }
 
 .portfolio__filter {
@@ -529,6 +576,18 @@ input, textarea, select { font-family: inherit; }
   align-items: center;
 }
 .about__visual { position: relative; }
+.about__visual::before {
+  content: '';
+  position: absolute;
+  top: -28px;
+  left: -28px;
+  width: 88px;
+  height: 88px;
+  background-image: radial-gradient(circle, var(--clr-warm-brown) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  opacity: 0.32;
+  z-index: 0;
+}
 .about__card-main {
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
@@ -769,12 +828,17 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   transition: color var(--transition);
 }
 .footer__links a:hover { color: var(--clr-text-on-dark); }
+.footer__deco {
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+  border-top: 1px solid var(--clr-border-dark);
+  margin-top: 24px;
+}
 .footer__copy {
   font-size: 0.82rem; color: var(--clr-text-muted-dark);
   width: 100%; text-align: center;
-  padding-top: 28px;
-  border-top: 1px solid var(--clr-border-dark);
-  margin-top: 20px;
+  padding-top: 16px;
 }
 
 /* ── Scroll-to-top ──────────────────────────────────── */
