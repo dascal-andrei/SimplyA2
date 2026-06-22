@@ -176,6 +176,7 @@ input, textarea, select { font-family: inherit; }
 .nav__logo {
   font-size: 1.3rem;
   font-weight: 600;
+  font-family: var(--font-heading);
   letter-spacing: -0.01em;
   color: var(--clr-text-on-dark);
 }
