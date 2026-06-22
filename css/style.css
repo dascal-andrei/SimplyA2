@@ -15,20 +15,20 @@
   --clr-dark:           #041A2D;           /* bleumarin */
   --clr-warm-brown:     #5B413D;           /* maro cald */
 
-  --clr-bg:             #2D3C23;           /* crem — fundal principal + text pe dark */
+  --clr-bg:             #E6E6CF;           /* crem — fundal principal */
   --clr-bg-alt:         #C9BEB3;           /* gri bej — secțiuni alternative */
   --clr-bg-dark:        #041A2D;           /* bleumarin — hero, contact, footer */
 
   --clr-surface:        #ffffff;           /* alb — carduri */
   --clr-surface-2:      #f5f2eb;           /* alb cald — input-uri */
 
-  --clr-border:         rgba(91, 65, 61, 0.32);   /* maro pe fundal deschis */
-  --clr-border-dark:    rgba(45, 60, 35, 0.14); /* crem pe fundal închis */
+  --clr-border:         rgba(91, 65, 61, 0.32);
+  --clr-border-dark:    rgba(230, 230, 207, 0.14);
 
-  --clr-text:           #041A2D;           /* bleumarin — text pe fundal deschis */
-  --clr-text-muted:     #5B413D;           /* maro cald — text secundar pe deschis */
-  --clr-text-on-dark:   #2D3C23;           /* crem — text pe fundal închis */
-  --clr-text-muted-dark:rgba(45, 60, 35, 0.58);
+  --clr-text:           #041A2D;
+  --clr-text-muted:     #5B413D;
+  --clr-text-on-dark:   #E6E6CF;
+  --clr-text-muted-dark:rgba(230, 230, 207, 0.62);
 
   --clr-white:          #ffffff;
 
@@ -143,7 +143,7 @@ input, textarea, select { font-family: inherit; }
 .btn-outline {
   background: transparent;
   color: var(--clr-text-on-dark);
-  border: 1.5px solid rgba(45, 60, 35, 0.35);
+  border: 1.5px solid rgba(230, 230, 207, 0.38);
 }
 .btn-outline:hover {
   border-color: var(--clr-secondary);
@@ -202,9 +202,7 @@ input, textarea, select { font-family: inherit; }
   border-radius: 2px;
 }
 .nav__links a:hover,
-.nav__links a.active {
-  color: #ffffff;
-}
+.nav__links a.active { color: #ffffff; }
 .nav__links a:hover::after,
 .nav__links a.active::after { width: 100%; }
 
@@ -239,8 +237,8 @@ input, textarea, select { font-family: inherit; }
 .hero__grid-bg {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(45, 60, 35, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(45, 60, 35, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(230, 230, 207, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(230, 230, 207, 0.05) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 40%, transparent 100%);
 }
@@ -255,7 +253,31 @@ input, textarea, select { font-family: inherit; }
 .hero__content {
   position: relative;
   z-index: 2;
-  max-width: 780px;
+  width: 100%;
+}
+
+/* ── Layout titlu + badge pe același rând ─────────────── */
+.hero__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+.hero__title {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--clr-text-on-dark);
+  flex: 1;
+}
+.hero__title .gradient-text {
+  background: linear-gradient(135deg, var(--clr-bg-alt) 0%, var(--clr-bg) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .hero__badge {
   display: inline-flex;
@@ -267,8 +289,10 @@ input, textarea, select { font-family: inherit; }
   border: 1px solid var(--clr-border-dark);
   padding: 8px 16px;
   border-radius: 100px;
-  margin-bottom: 32px;
-  background: rgba(45, 60, 35, 0.06);
+  background: rgba(230, 230, 207, 0.07);
+  flex-shrink: 0;
+  /* aliniat cu linia "digitale" — a doua linie a titlului */
+  margin-top: clamp(3.1rem, 6.6vw, 5.5rem);
 }
 .hero__badge .dot {
   width: 7px; height: 7px;
@@ -281,21 +305,7 @@ input, textarea, select { font-family: inherit; }
   0%, 100% { opacity: 1; }
   50%       { opacity: 0.4; }
 }
-.hero__title {
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  font-family: var(--font-heading);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  margin-bottom: 24px;
-  color: var(--clr-text-on-dark);
-}
-.hero__title .gradient-text {
-  background: linear-gradient(135deg, var(--clr-bg-alt) 0%, var(--clr-bg) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+
 .hero__desc {
   font-size: 1.15rem;
   color: var(--clr-text-muted-dark);
@@ -324,7 +334,7 @@ input, textarea, select { font-family: inherit; }
   font-weight: 500;
 }
 
-/* ── Services — crem ────────────────────────────────── */
+/* ── Services — crem (#E6E6CF) ──────────────────────── */
 .services { padding: var(--section-gap) 0; }
 .services__grid {
   display: grid;
@@ -396,11 +406,45 @@ input, textarea, select { font-family: inherit; }
   flex-shrink: 0;
 }
 
-/* ── Portfolio — gri bej ────────────────────────────── */
+/* ── Portfolio — verde militar (#2D3C23) ─────────────── */
 .portfolio {
   padding: var(--section-gap) 0;
-  background: var(--clr-bg-alt);
+  background: var(--clr-secondary);
 }
+
+/* Text overrides pe fundal verde */
+.portfolio .section-label {
+  color: var(--clr-bg);
+  background: rgba(230, 230, 207, 0.10);
+  border-color: rgba(230, 230, 207, 0.25);
+}
+.portfolio .section-title {
+  color: var(--clr-bg);
+}
+.portfolio .section-title span {
+  color: var(--clr-bg-alt);
+}
+.portfolio .section-title::after {
+  background: var(--clr-primary);
+}
+.portfolio .section-desc {
+  color: rgba(230, 230, 207, 0.70);
+}
+.portfolio .filter-btn {
+  border-color: rgba(230, 230, 207, 0.35);
+  color: var(--clr-bg);
+}
+.portfolio .filter-btn:hover {
+  background: rgba(230, 230, 207, 0.15);
+  border-color: var(--clr-bg);
+  color: var(--clr-bg);
+}
+.portfolio .filter-btn.active {
+  background: var(--clr-primary);
+  border-color: var(--clr-primary);
+  color: var(--clr-white);
+}
+
 .portfolio__filter {
   display: flex; gap: 8px; flex-wrap: wrap;
   margin-bottom: 48px;
@@ -424,6 +468,7 @@ input, textarea, select { font-family: inherit; }
   border-color: var(--clr-primary);
   color: var(--clr-white);
 }
+
 .portfolio__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -438,9 +483,9 @@ input, textarea, select { font-family: inherit; }
   box-shadow: 0 2px 12px rgba(91, 65, 61, 0.12);
 }
 .portfolio-card:hover {
-  border-color: var(--clr-secondary);
+  border-color: var(--clr-primary);
   transform: translateY(-4px);
-  box-shadow: 0 8px 28px rgba(45, 60, 35, 0.20);
+  box-shadow: 0 8px 28px rgba(73, 5, 24, 0.25);
 }
 .portfolio-card__thumb {
   width: 100%; aspect-ratio: 16/9;
@@ -482,8 +527,11 @@ input, textarea, select { font-family: inherit; }
   line-height: 1.7;
 }
 
-/* ── About — crem ───────────────────────────────────── */
-.about { padding: var(--section-gap) 0; }
+/* ── About — gri bej (#C9BEB3) ─────────────────────── */
+.about {
+  padding: var(--section-gap) 0;
+  background: var(--clr-bg-alt);
+}
 .about__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -584,7 +632,7 @@ input, textarea, select { font-family: inherit; }
 }
 .about__value-desc { font-size: 0.8rem; color: var(--clr-text-muted); line-height: 1.6; }
 
-/* ── Contact — bleumarin ─────────────────────────────── */
+/* ── Contact — bleumarin (#041A2D) ──────────────────── */
 .contact {
   padding: var(--section-gap) 0;
   background: var(--clr-bg-dark);
@@ -642,7 +690,7 @@ input, textarea, select { font-family: inherit; }
   width: 44px; height: 44px;
   border-radius: 12px;
   border: 1px solid var(--clr-border-dark);
-  background: rgba(45, 60, 35, 0.06);
+  background: rgba(230, 230, 207, 0.06);
   color: var(--clr-text-on-dark);
   display: flex; align-items: center; justify-content: center;
   font-size: 1.1rem;
@@ -657,7 +705,7 @@ input, textarea, select { font-family: inherit; }
 /* Card formular (alb pe bleumarin) */
 .contact__form {
   background: var(--clr-white);
-  border: 1px solid rgba(45, 60, 35, 0.10);
+  border: 1px solid rgba(230, 230, 207, 0.10);
   border-radius: var(--radius-lg);
   padding: 40px;
   box-shadow: 0 12px 56px rgba(0, 0, 0, 0.28);
@@ -709,7 +757,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
 .form-success { display: none; text-align: center; padding: 20px; }
 .form-success.visible { display: block; }
 
-/* ── Footer — bleumarin ─────────────────────────────── */
+/* ── Footer — bleumarin (#041A2D) ───────────────────── */
 .footer {
   background: var(--clr-bg-dark);
   border-top: 1px solid var(--clr-border-dark);
@@ -791,10 +839,22 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   .form-row { grid-template-columns: 1fr; }
 }
 
+@media (max-width: 768px) {
+  .hero__top {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .hero__badge {
+    margin-top: 0;
+    align-self: flex-end;
+  }
+}
+
 @media (max-width: 600px) {
   :root { --section-gap: 64px; }
   .hero__stats  { gap: 28px; }
   .hero__actions { flex-direction: column; align-items: flex-start; }
+  .hero__badge  { align-self: flex-start; }
   .portfolio__grid  { grid-template-columns: 1fr; }
   .services__grid   { grid-template-columns: 1fr; }
   .about__values    { grid-template-columns: 1fr; }
