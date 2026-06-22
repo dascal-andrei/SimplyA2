@@ -2,13 +2,6 @@
    Simply A2 — Main Stylesheet
    ===================================================== */
 
-@font-face {
-  font-family: 'Wister';
-  src: url('../assets/fonts/Wister-Demo.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 :root {
   /* ── Paletă ────────────────────────────────────── */
@@ -40,7 +33,7 @@
 
   --clr-white:          #ffffff;
 
-  --font-heading: 'Wister', Georgia, serif;
+  --font-heading: 'Climate Crisis', Georgia, serif;
   --font-body:    'Gloock', Georgia, serif;
 
   --radius:         12px;
