@@ -48,7 +48,7 @@
 
 /* ── Reset ─────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 body {
   background: var(--clr-bg);
   color: var(--clr-text);
@@ -959,8 +959,6 @@ textarea.form-control { resize: vertical; min-height: 140px; }
 @media (max-width: 600px) {
   :root { --section-gap: 64px; }
   .hero {
-    width: 100vw;
-    margin-left: calc(-1 * (100vw - 100%) / 2);
     padding-bottom: 64px;
   }
   .hero__actions { flex-direction: column; align-items: flex-start; }
