@@ -174,14 +174,15 @@ input, textarea, select { font-family: inherit; }
   justify-content: space-between;
 }
 .nav__logo {
-  font-size: 1.3rem;
-  font-weight: 600;
-  font-family: 'Gloock', Georgia, serif;
-  letter-spacing: -0.01em;
-  color: var(--clr-text-on-dark);
+  display: flex;
+  align-items: center;
   margin-left: -10px;
 }
-.nav__logo span { color: var(--clr-primary); }
+.nav__logo-img {
+  height: 42px;
+  width: auto;
+  display: block;
+}
 
 .nav__links {
   display: flex;
@@ -286,6 +287,14 @@ input, textarea, select { font-family: inherit; }
   position: relative;
   z-index: 2;
   width: 100%;
+}
+
+.hero__logo {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 28px;
 }
 
 /* ── Layout titlu + badge pe același rând ─────────────── */
@@ -843,10 +852,14 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   justify-content: space-between; flex-wrap: wrap; gap: 24px;
 }
 .footer__logo {
-  font-size: 1.1rem; font-weight: 600;
-  color: var(--clr-text-on-dark); letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
 }
-.footer__logo span { color: var(--clr-primary); }
+.footer__logo-img {
+  height: 52px;
+  width: auto;
+  display: block;
+}
 .footer__links { display: flex; gap: 28px; }
 .footer__links a {
   font-size: 0.85rem;
@@ -940,6 +953,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   .hero {
     padding-bottom: 64px;
   }
+  .hero__logo { width: 100px; height: 100px; margin-bottom: 20px; }
   .hero__actions { flex-direction: column; align-items: flex-start; }
   .hero__badge  { align-self: flex-start; }
   .portfolio__grid  { grid-template-columns: 1fr; }
