@@ -179,7 +179,7 @@ input, textarea, select { font-family: inherit; }
   margin-left: -10px;
 }
 .nav__logo-img {
-  height: 54px;
+  height: 108px;
   width: auto;
   display: block;
 }
@@ -848,7 +848,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   align-items: center;
 }
 .footer__logo-img {
-  height: 54px;
+  height: 108px;
   width: auto;
   display: block;
 }
