@@ -103,6 +103,19 @@
     }
   });
 
+  // ── Load more portfolio cards ─────────────────────
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  loadMoreBtn?.addEventListener('click', () => {
+    document.querySelectorAll('.portfolio-card--hidden').forEach(card => {
+      card.classList.remove('portfolio-card--hidden');
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(24px)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      setTimeout(() => { card.style.opacity = '1'; card.style.transform = ''; }, 20);
+    });
+    loadMoreBtn.closest('.portfolio__more').style.display = 'none';
+  });
+
   // ── Scroll-to-top ─────────────────────────────────
   scrollTopBtn?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

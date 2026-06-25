@@ -512,6 +512,14 @@ input, textarea, select { font-family: inherit; }
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 24px;
 }
+.portfolio-card--hidden {
+  display: none;
+}
+.portfolio__more {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
 .portfolio-card {
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
