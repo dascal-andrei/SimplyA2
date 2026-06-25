@@ -530,7 +530,11 @@ input, textarea, select { font-family: inherit; }
   position: relative; overflow: hidden;
   display: flex; align-items: center; justify-content: center;
 }
-.portfolio-card__thumb-placeholder { font-size: 3rem; opacity: 0.25; }
+.portfolio-card__thumb-placeholder {
+  display: flex; align-items: center; justify-content: center;
+  color: var(--clr-dark);
+  opacity: 0.18;
+}
 .portfolio-card__thumb-overlay {
   position: absolute; inset: 0;
   background: rgba(73, 5, 24, 0.88);
@@ -642,7 +646,7 @@ input, textarea, select { font-family: inherit; }
   border: 2px solid var(--clr-surface);
   background: var(--clr-surface-2);
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem;
+  color: var(--clr-text-muted);
   margin-right: -12px;
 }
 .about__card-stat {
