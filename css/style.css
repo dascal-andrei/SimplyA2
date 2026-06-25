@@ -680,6 +680,7 @@ input, textarea, select { font-family: inherit; }
   padding: 16px 20px;
   display: flex; align-items: center; gap: 12px;
   box-shadow: var(--shadow);
+  z-index: 2;
 }
 .about__card-floating--top   { top: 0; right: 0; min-width: 180px; }
 .about__card-floating--bottom { bottom: 0; left: -28px; min-width: 200px; }
