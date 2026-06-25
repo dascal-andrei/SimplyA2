@@ -75,17 +75,32 @@
   const form = document.querySelector('.contact__form form');
   const successMsg = document.querySelector('.form-success');
 
-  form?.addEventListener('submit', (e) => {
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('[type="submit"]');
     btn.disabled = true;
     btn.textContent = 'Se trimite...';
 
-    // Simulate async send — replace with real fetch() to your backend/Formspree
-    setTimeout(() => {
-      form.style.display = 'none';
-      if (successMsg) successMsg.classList.add('visible');
-    }, 1200);
+    const data = new FormData(form);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      });
+      const json = await res.json();
+      if (json.success) {
+        form.style.display = 'none';
+        if (successMsg) successMsg.classList.add('visible');
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Trimite mesajul';
+        alert('Eroare la trimitere. Încearcă din nou sau scrie direct la contact@simplya2.ro');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Trimite mesajul';
+      alert('Eroare de rețea. Scrie-ne direct la contact@simplya2.ro');
+    }
   });
 
   // ── Scroll-to-top ─────────────────────────────────

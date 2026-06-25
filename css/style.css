@@ -159,12 +159,14 @@ input, textarea, select { font-family: inherit; }
   top: 0; left: 0; right: 0;
   z-index: 1000;
   padding: 20px 0;
-  background: var(--clr-bg-dark);
-  border-bottom: 1px solid var(--clr-border-dark);
+  background: transparent;
+  border-bottom: 1px solid transparent;
   transition: var(--transition);
 }
 .nav.scrolled {
   padding: 14px 0;
+  background: var(--clr-bg-dark);
+  border-bottom: 1px solid var(--clr-border-dark);
 }
 .nav__inner {
   display: flex;
@@ -908,6 +910,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
 
   .nav__links, .nav__cta { display: none; }
   .nav__hamburger { display: flex; }
+  .nav { background: var(--clr-bg-dark); border-bottom: 1px solid var(--clr-border-dark); }
 
   .nav__mobile-menu {
     position: absolute;
