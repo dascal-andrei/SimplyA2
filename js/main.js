@@ -103,6 +103,52 @@
     }
   });
 
+  // ── Portfolio modal ───────────────────────────────
+  const modal        = document.getElementById('portfolioModal');
+  const modalClose   = document.getElementById('pmodalClose');
+  const modalTag     = document.getElementById('pmodal-tag');
+  const modalTitle   = document.getElementById('pmodal-title');
+  const modalDesc    = document.getElementById('pmodal-desc');
+  const modalDetails = document.getElementById('pmodal-details');
+  const modalCta     = document.querySelector('.pmodal-cta');
+
+  function openModal(card) {
+    modalTag.textContent   = card.dataset.tag   || '';
+    modalTitle.textContent = card.dataset.title || '';
+    modalDesc.textContent  = card.dataset.desc  || '';
+
+    modalDetails.innerHTML = '';
+    ['1','2','3','4'].forEach(n => {
+      const val = card.dataset[`detail${n}`];
+      if (val) {
+        const li = document.createElement('li');
+        li.textContent = val;
+        modalDetails.appendChild(li);
+      }
+    });
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    modalClose.focus();
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.portfolio-open-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(btn.closest('.portfolio-card'));
+    });
+  });
+
+  modalClose?.addEventListener('click', closeModal);
+  modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  modalCta?.addEventListener('click', closeModal);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal?.classList.contains('open')) closeModal(); });
+
   // ── Load more portfolio cards ─────────────────────
   const loadMoreBtn = document.getElementById('loadMoreBtn');
   loadMoreBtn?.addEventListener('click', () => {
