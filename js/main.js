@@ -176,7 +176,9 @@
   loadMoreBtn?.addEventListener('click', () => {
     const all = Array.from(portfolioCards);
     const matching = all.filter(c => activeFilter === 'all' || c.dataset.category === activeFilter);
-    matching.forEach(c => { if (c.style.display === 'none') showCard(c); });
+    matching.forEach(c => {
+      if (c.style.display === 'none' || c.classList.contains('portfolio-card--hidden')) showCard(c);
+    });
     if (moreContainer) moreContainer.style.display = 'none';
   });
 
