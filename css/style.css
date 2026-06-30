@@ -1117,6 +1117,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
 
 @media (max-width: 600px) {
   .pmodal__gallery { grid-template-columns: 1fr; }
+  .pmodal__img--main { min-height: 0; width: 100%; }
   .pmodal__thumbs  { flex-direction: row; width: 100%; }
   .pmodal__img--thumb { min-height: 80px; }
   .pmodal__header,
@@ -1124,4 +1125,5 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   .pmodal__gallery,
   .pmodal__footer  { padding-left: 20px; padding-right: 20px; }
   .pmodal__footer  { justify-content: center; }
+  .pmodal__title   { font-size: 1.3rem; }
 }
