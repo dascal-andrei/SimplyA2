@@ -161,17 +161,17 @@
     document.body.style.overflow = '';
   }
 
-  document.querySelectorAll('.portfolio-open-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openModal(btn.closest('.portfolio-card'));
-    });
-  });
-
-  modalClose?.addEventListener('click', closeModal);
-  modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-  modalCta?.addEventListener('click', closeModal);
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal?.classList.contains('open')) closeModal(); });
+  // Modal triggers disabled — re-enable by uncommenting
+  // document.querySelectorAll('.portfolio-open-btn').forEach(btn => {
+  //   btn.addEventListener('click', (e) => {
+  //     e.preventDefault();
+  //     openModal(btn.closest('.portfolio-card'));
+  //   });
+  // });
+  // modalClose?.addEventListener('click', closeModal);
+  // modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  // modalCta?.addEventListener('click', closeModal);
+  // document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal?.classList.contains('open')) closeModal(); });
 
   loadMoreBtn?.addEventListener('click', () => {
     const all = Array.from(portfolioCards);
