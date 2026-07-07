@@ -168,6 +168,42 @@ input, textarea, select { font-family: inherit; }
   background: var(--clr-bg-dark);
   border-bottom: 1px solid var(--clr-border-dark);
 }
+
+/* ── Tweakable: section-aware nav colors ─────────────
+   Change these variables to restyle each state:
+     --nav-section-bg      → background for portfolio
+     --nav-section-border  → bottom border
+     --nav-section-text    → link color
+     --nav-section-active  → hover / active link color
+──────────────────────────────────────────────────── */
+:root {
+  --nav-section-bg:     var(--clr-bg);        /* cream */
+  --nav-section-border: var(--clr-border);
+  --nav-section-text:   var(--clr-text);      /* dark navy */
+  --nav-section-active: var(--clr-primary);   /* burgundy */
+}
+
+.nav.nav--cream,
+.nav.scrolled.nav--cream {
+  background:    var(--nav-section-bg);
+  border-bottom: 1px solid var(--nav-section-border);
+}
+.nav.nav--cream .nav__logo-img {
+  filter: brightness(0);
+}
+.nav.nav--cream .nav__links a {
+  color: var(--nav-section-text);
+}
+.nav.nav--cream .nav__links a:hover,
+.nav.nav--cream .nav__links a.active {
+  color: var(--nav-section-active);
+}
+.nav.nav--cream .nav__links a::after {
+  background: var(--nav-section-active);
+}
+.nav.nav--cream .nav__hamburger span {
+  background: var(--nav-section-text);
+}
 .nav__inner {
   display: flex;
   align-items: center;

@@ -9,10 +9,19 @@
   const nav = document.querySelector('.nav');
   const scrollTopBtn = document.querySelector('.scroll-top');
 
+  const portfolioSection = document.getElementById('portofoliu');
+
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
     nav?.classList.toggle('scrolled', y > 60);
     scrollTopBtn?.classList.toggle('visible', y > 400);
+
+    // Cream nav when inside portfolio section
+    if (nav && portfolioSection) {
+      const pTop    = portfolioSection.offsetTop - 80;
+      const pBottom = pTop + portfolioSection.offsetHeight;
+      nav.classList.toggle('nav--cream', y >= pTop && y < pBottom);
+    }
 
     // Active nav link highlight
     document.querySelectorAll('section[id]').forEach(section => {
