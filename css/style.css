@@ -202,7 +202,8 @@ input, textarea, select { font-family: inherit; }
   background: var(--nav-section-text);
 }
 .nav.nav--cream .nav__logo-img {
-  height: 81px;
+  height: 60px;
+  vertical-align: middle;
 }
 .nav__inner {
   display: flex;

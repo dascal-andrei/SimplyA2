@@ -23,7 +23,7 @@
       const pBottom    = pTop + portfolioSection.offsetHeight;
       const inPortfolio = y >= pTop && y < pBottom;
       nav.classList.toggle('nav--cream', inPortfolio);
-      if (navLogo) navLogo.src = inPortfolio ? 'assets/2.svg' : 'assets/3.svg';
+      if (navLogo) navLogo.src = inPortfolio ? 'assets/2%20-%20Copy.svg' : 'assets/3.svg';
     }
 
     // Active nav link highlight
