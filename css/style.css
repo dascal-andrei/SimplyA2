@@ -201,11 +201,6 @@ input, textarea, select { font-family: inherit; }
 .nav.nav--cream .nav__hamburger span {
   background: var(--nav-section-text);
 }
-.nav.nav--cream .nav__logo {
-  background: var(--clr-bg-dark);
-  border-radius: 40px;
-  padding: 0 10px;
-}
 .nav__inner {
   display: flex;
   align-items: center;
