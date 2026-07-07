@@ -177,7 +177,7 @@ input, textarea, select { font-family: inherit; }
      --nav-section-active  → hover / active link color
 ──────────────────────────────────────────────────── */
 :root {
-  --nav-section-bg:     var(--clr-bg);        /* cream */
+  --nav-section-bg:     var(--clr-bg-alt);     /* gri bej — ca si despre noi */
   --nav-section-border: var(--clr-border);
   --nav-section-text:   var(--clr-text);      /* dark navy */
   --nav-section-active: var(--clr-primary);   /* burgundy */
