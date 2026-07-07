@@ -176,10 +176,10 @@ input, textarea, select { font-family: inherit; }
 .nav__logo {
   display: flex;
   align-items: center;
-  margin-left: -10px;
+  margin-left: -32px;
 }
 .nav__logo-img {
-  height: 81px;
+  height: 60px;
   width: auto;
   display: block;
 }
@@ -190,7 +190,7 @@ input, textarea, select { font-family: inherit; }
   gap: 36px;
 }
 .nav__links a {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #E6E6CF;
   transition: color var(--transition);
