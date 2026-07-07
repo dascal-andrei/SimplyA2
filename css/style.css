@@ -201,6 +201,9 @@ input, textarea, select { font-family: inherit; }
 .nav.nav--cream .nav__hamburger span {
   background: var(--nav-section-text);
 }
+.nav.nav--cream .nav__logo-img {
+  height: 81px;
+}
 .nav__inner {
   display: flex;
   align-items: center;
