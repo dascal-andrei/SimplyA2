@@ -56,6 +56,10 @@
   const moreContainer = loadMoreBtn?.closest('.portfolio__more');
   const PAGE = 3;
   let activeFilter = 'all';
+  let expanded = false;
+
+  const BTN_MORE = 'Vezi mai multe <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const BTN_LESS = 'Arată mai puțin <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 13V3M3 8l5-5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
   function showCard(card) {
     card.classList.remove('portfolio-card--hidden');
@@ -71,6 +75,9 @@
 
   function applyFilter(filter) {
     activeFilter = filter;
+    expanded = false;
+    if (loadMoreBtn) loadMoreBtn.innerHTML = BTN_MORE;
+
     const all = Array.from(portfolioCards);
     const matching    = all.filter(c => filter === 'all' || c.dataset.category === filter);
     const nonMatching = all.filter(c => filter !== 'all' && c.dataset.category !== filter);
@@ -174,12 +181,17 @@
   // document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal?.classList.contains('open')) closeModal(); });
 
   loadMoreBtn?.addEventListener('click', () => {
-    const all = Array.from(portfolioCards);
-    const matching = all.filter(c => activeFilter === 'all' || c.dataset.category === activeFilter);
-    matching.forEach(c => {
-      if (c.style.display === 'none' || c.classList.contains('portfolio-card--hidden')) showCard(c);
-    });
-    if (moreContainer) moreContainer.style.display = 'none';
+    if (!expanded) {
+      const all = Array.from(portfolioCards);
+      const matching = all.filter(c => activeFilter === 'all' || c.dataset.category === activeFilter);
+      matching.forEach(c => {
+        if (c.style.display === 'none' || c.classList.contains('portfolio-card--hidden')) showCard(c);
+      });
+      expanded = true;
+      loadMoreBtn.innerHTML = BTN_LESS;
+    } else {
+      applyFilter(activeFilter);
+    }
   });
 
   // ── Scroll-to-top ─────────────────────────────────
