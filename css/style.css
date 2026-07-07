@@ -188,9 +188,6 @@ input, textarea, select { font-family: inherit; }
   background:    var(--nav-section-bg);
   border-bottom: 1px solid var(--nav-section-border);
 }
-.nav.nav--cream .nav__logo-img {
-  filter: brightness(0);
-}
 .nav.nav--cream .nav__links a {
   color: var(--nav-section-text);
 }

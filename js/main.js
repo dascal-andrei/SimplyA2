@@ -10,6 +10,7 @@
   const scrollTopBtn = document.querySelector('.scroll-top');
 
   const portfolioSection = document.getElementById('portofoliu');
+  const navLogo = document.querySelector('.nav__logo-img');
 
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
@@ -20,7 +21,9 @@
     if (nav && portfolioSection) {
       const pTop    = portfolioSection.offsetTop - 80;
       const pBottom = pTop + portfolioSection.offsetHeight;
-      nav.classList.toggle('nav--cream', y >= pTop && y < pBottom);
+      const inPortfolio = y >= pTop && y < pBottom;
+      nav.classList.toggle('nav--cream', inPortfolio);
+      if (navLogo) navLogo.src = inPortfolio ? 'assets/2.svg' : 'assets/3.svg';
     }
 
     // Active nav link highlight
