@@ -11,6 +11,7 @@
 
   const portfolioSection = document.getElementById('portofoliu');
   const navLogo = document.querySelector('.nav__logo-img');
+  let navLogoCream = false;
 
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
@@ -23,7 +24,10 @@
       const pBottom    = pTop + portfolioSection.offsetHeight;
       const inPortfolio = y >= pTop && y < pBottom;
       nav.classList.toggle('nav--cream', inPortfolio);
-      if (navLogo) navLogo.src = inPortfolio ? 'assets/2-copy.svg' : 'assets/3.svg';
+      if (navLogo && inPortfolio !== navLogoCream) {
+        navLogoCream = inPortfolio;
+        navLogo.src = inPortfolio ? 'assets/logo-badge.svg' : 'assets/logo-badge-dark.svg';
+      }
     }
 
     // Active nav link highlight

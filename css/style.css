@@ -219,6 +219,8 @@ input, textarea, select { font-family: inherit; }
   height: 60px;
   width: auto;
   display: block;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .nav__links {
