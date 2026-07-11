@@ -5,6 +5,8 @@
 (function () {
   'use strict';
 
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // ── Navigation scroll effect ──────────────────────
   const nav = document.querySelector('.nav');
   const scrollTopBtn = document.querySelector('.scroll-top');
@@ -80,6 +82,11 @@
   function showCard(card) {
     card.classList.remove('portfolio-card--hidden');
     card.style.display = '';
+    if (reduceMotion) {
+      card.style.opacity = '1';
+      card.style.transform = '';
+      return;
+    }
     card.style.opacity = '0';
     card.style.transform = 'translateY(20px)';
     card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
@@ -87,6 +94,23 @@
       card.style.opacity = '1';
       card.style.transform = '';
     }));
+  }
+
+  function hideCard(card) {
+    if (getComputedStyle(card).display === 'none') return;
+    if (reduceMotion) {
+      card.style.display = 'none';
+      return;
+    }
+    card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(16px)';
+    const onEnd = () => {
+      card.style.display = 'none';
+      card.removeEventListener('transitionend', onEnd);
+    };
+    card.addEventListener('transitionend', onEnd);
+    setTimeout(() => { if (card.style.opacity === '0') card.style.display = 'none'; }, 350);
   }
 
   function applyFilter(filter) {
@@ -98,11 +122,11 @@
     const matching    = all.filter(c => filter === 'all' || c.dataset.category === filter);
     const nonMatching = all.filter(c => filter !== 'all' && c.dataset.category !== filter);
 
-    nonMatching.forEach(c => { c.style.display = 'none'; });
+    nonMatching.forEach(c => { hideCard(c); });
 
     matching.forEach((c, i) => {
       if (i < PAGE) { showCard(c); }
-      else          { c.style.display = 'none'; }
+      else          { hideCard(c); }
     });
 
     if (moreContainer) {
@@ -226,20 +250,26 @@
     });
   }, observerOpts);
 
-  document.querySelectorAll('.service-card, .portfolio-card, .about__value, .contact__detail')
-    .forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(24px)';
-      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  const revealSelectors = [
+    '.hero__top', '.hero__desc', '.hero__actions',
+    '.section-header',
+    '.service-card', '.portfolio-card', '.about__value', '.contact__detail',
+    '.about__visual', '.contact__form', '.footer__inner'
+  ];
+  const gridStaggerSelectors = '.services__grid .service-card, .portfolio__grid .portfolio-card, .about__values .about__value';
+
+  document.querySelectorAll(revealSelectors.join(', ')).forEach(el => {
+    el.classList.add('reveal');
+    if (el.matches(gridStaggerSelectors)) {
+      const idx = Array.from(el.parentElement.children).indexOf(el);
+      el.style.setProperty('--reveal-delay', `${Math.min(idx, 5) * 0.08}s`);
+    }
+    if (reduceMotion) {
+      el.classList.add('in-view');
+    } else {
       observer.observe(el);
-    });
-
-  document.addEventListener('animationend', () => {}, { once: true });
-
-  // Inject .in-view style
-  const style = document.createElement('style');
-  style.textContent = '.in-view { opacity: 1 !important; transform: none !important; }';
-  document.head.appendChild(style);
+    }
+  });
 
   // ── Typed counter animation ────────────────────────
   function animateCounter(el) {

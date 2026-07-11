@@ -38,7 +38,14 @@
 
   --radius:         12px;
   --radius-lg:      20px;
-  --transition:     0.3s ease;
+  --ease-smooth:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:       0.2s;
+  --dur-base:       0.35s;
+  --dur-slow:       0.6s;
+  --dur-nav:        0.4s;
+  --dur-modal:      0.25s;
+  --transition:     var(--dur-fast) var(--ease-smooth);
   --shadow:         0 8px 32px rgba(4, 26, 45, 0.10);
   --shadow-primary: 0 8px 32px rgba(73, 5, 24, 0.20);
 
@@ -128,7 +135,10 @@ input, textarea, select { font-family: inherit; }
   border-radius: 100px;
   font-size: 0.95rem;
   font-weight: 600;
-  transition: var(--transition);
+  transition: transform var(--dur-base) var(--ease-spring),
+              background-color var(--dur-fast) var(--ease-smooth),
+              border-color var(--dur-fast) var(--ease-smooth),
+              box-shadow var(--dur-fast) var(--ease-smooth);
   border: none;
 }
 .btn-primary {
@@ -141,6 +151,9 @@ input, textarea, select { font-family: inherit; }
   box-shadow: 0 6px 28px rgba(73, 5, 24, 0.48);
   transform: translateY(-2px);
 }
+.btn-primary:active {
+  transform: translateY(0) scale(0.97);
+}
 .btn-outline {
   background: transparent;
   color: var(--clr-text-on-dark);
@@ -152,6 +165,22 @@ input, textarea, select { font-family: inherit; }
   background: rgba(45, 60, 35, 0.30);
   transform: translateY(-2px);
 }
+.btn-outline:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* ── Motion / Reveal system ───────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--dur-slow) var(--ease-smooth),
+              transform var(--dur-slow) var(--ease-smooth);
+  transition-delay: var(--reveal-delay, 0s);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
 
 /* ── Navigation ─────────────────────────────────────── */
 .nav {
@@ -161,7 +190,7 @@ input, textarea, select { font-family: inherit; }
   padding: 20px 0;
   background-color: transparent;
   border-bottom: 1px solid transparent;
-  transition: background-color 0.4s ease, border-color 0.4s ease, padding var(--transition);
+  transition: background-color var(--dur-nav) var(--ease-smooth), border-color var(--dur-nav) var(--ease-smooth), padding var(--transition);
 }
 .nav.scrolled {
   padding: 14px 0;
@@ -305,21 +334,38 @@ input, textarea, select { font-family: inherit; }
   top: 14%;
   right: 8%;
   opacity: 0.72;
+  animation: pulse-sparkle 5s var(--ease-smooth) infinite;
 }
 .hero__deco--rings {
   bottom: -60px;
   right: -60px;
   opacity: 0.07;
+  animation: float-y 9s var(--ease-smooth) infinite;
 }
 .hero__deco--cross {
   top: 46%;
   left: 5%;
   opacity: 0.4;
+  animation: float-y 7s var(--ease-smooth) infinite reverse;
 }
 .hero__deco--dot {
   top: 28%;
   left: 38%;
   opacity: 0.35;
+  animation: pulse-dot 4s var(--ease-smooth) infinite;
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+@keyframes pulse-sparkle {
+  0%, 100% { opacity: 0.72; transform: scale(1); }
+  50%      { opacity: 0.5;  transform: scale(1.05); }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50%      { opacity: 0.2;  transform: scale(1.15); }
 }
 
 .hero__content {
@@ -335,6 +381,7 @@ input, textarea, select { font-family: inherit; }
   align-items: flex-start;
   gap: 32px;
   margin-bottom: 24px;
+  --reveal-delay: 0.15s;
 }
 .hero__title {
   font-size: clamp(2.2rem, 4.8vw, 4rem);
@@ -358,6 +405,7 @@ input, textarea, select { font-family: inherit; }
   max-width: 560px;
   line-height: 1.8;
   margin-bottom: 40px;
+  --reveal-delay: 0.3s;
 }
 .hero__actions {
   display: flex;
@@ -365,6 +413,7 @@ input, textarea, select { font-family: inherit; }
   gap: 16px;
   flex-wrap: wrap;
   margin-bottom: 0;
+  --reveal-delay: 0.45s;
 }
 
 
@@ -403,7 +452,9 @@ input, textarea, select { font-family: inherit; }
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-lg);
   padding: 36px 32px;
-  transition: var(--transition);
+  transition: transform var(--dur-base) var(--ease-spring),
+              box-shadow var(--dur-base) var(--ease-smooth),
+              border-color var(--dur-base) var(--ease-smooth);
   position: relative;
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(91, 65, 61, 0.12);
@@ -422,6 +473,7 @@ input, textarea, select { font-family: inherit; }
   box-shadow: 0 8px 28px rgba(91, 65, 61, 0.20);
 }
 .service-card:hover::before { opacity: 1; }
+.service-card:active { transform: translateY(-4px) scale(0.98); }
 .service-card::after {
   content: '';
   position: absolute;
@@ -533,13 +585,17 @@ input, textarea, select { font-family: inherit; }
   background: transparent;
   color: var(--clr-warm-brown);
   font-size: 0.85rem; font-weight: 600;
-  transition: var(--transition);
+  transition: transform var(--dur-base) var(--ease-spring),
+              background-color var(--dur-fast) var(--ease-smooth),
+              border-color var(--dur-fast) var(--ease-smooth),
+              color var(--dur-fast) var(--ease-smooth);
 }
 .filter-btn:hover {
   background: var(--clr-secondary);
   border-color: var(--clr-secondary);
   color: var(--clr-white);
 }
+.filter-btn:active { transform: scale(0.97); }
 .filter-btn.active {
   background: var(--clr-primary);
   border-color: var(--clr-primary);
@@ -565,7 +621,9 @@ input, textarea, select { font-family: inherit; }
   border-radius: var(--radius-lg);
   overflow: hidden;
   isolation: isolate;
-  transition: var(--transition);
+  transition: transform var(--dur-base) var(--ease-spring),
+              box-shadow var(--dur-base) var(--ease-smooth),
+              border-color var(--dur-base) var(--ease-smooth);
   box-shadow: 0 2px 12px rgba(91, 65, 61, 0.12);
 }
 .portfolio-card:hover {
@@ -573,6 +631,7 @@ input, textarea, select { font-family: inherit; }
   transform: translateY(-4px);
   box-shadow: 0 8px 28px rgba(73, 5, 24, 0.25);
 }
+.portfolio-card:active { transform: translateY(-4px) scale(0.98); }
 .portfolio-card__thumb {
   width: 100%; aspect-ratio: 16/9;
   background: var(--clr-bg-alt);
@@ -832,13 +891,16 @@ input, textarea, select { font-family: inherit; }
   color: var(--clr-text-on-dark);
   display: flex; align-items: center; justify-content: center;
   font-size: 1.1rem;
-  transition: var(--transition);
+  transition: transform var(--dur-base) var(--ease-spring),
+              background-color var(--dur-fast) var(--ease-smooth),
+              border-color var(--dur-fast) var(--ease-smooth);
 }
 .social-link:hover {
   border-color: var(--clr-primary);
   background: var(--clr-primary-glow);
   transform: translateY(-2px);
 }
+.social-link:active { transform: scale(0.93); }
 
 /* Card formular (alb pe bleumarin) */
 .contact__form {
@@ -951,6 +1013,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
 }
 .scroll-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
 .scroll-top:hover { background: var(--clr-primary-hover); transform: translateY(-2px); }
+.scroll-top:active { transform: scale(0.93); }
 
 /* ── Responsive ─────────────────────────────────────── */
 @media (max-width: 900px) {
@@ -1036,7 +1099,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   display: flex; align-items: center; justify-content: center;
   padding: 24px 16px;
   opacity: 0; pointer-events: none;
-  transition: opacity 0.25s ease;
+  transition: opacity var(--dur-modal) var(--ease-smooth);
 }
 .pmodal-overlay.open {
   opacity: 1; pointer-events: auto;
@@ -1049,7 +1112,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   overflow-y: auto;
   position: relative;
   transform: translateY(20px);
-  transition: transform 0.25s ease;
+  transition: transform var(--dur-modal) var(--ease-smooth);
   box-shadow: 0 24px 80px rgba(4, 26, 45, 0.35);
 }
 .pmodal-overlay.open .pmodal { transform: translateY(0); }
@@ -1165,4 +1228,24 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   .pmodal__footer  { padding-left: 20px; padding-right: 20px; }
   .pmodal__footer  { justify-content: center; }
   .pmodal__title   { font-size: 1.3rem; }
+}
+
+/* ── Reduced motion ─────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .hero__deco--sparkle,
+  .hero__deco--rings,
+  .hero__deco--cross,
+  .hero__deco--dot {
+    animation: none;
+  }
 }
