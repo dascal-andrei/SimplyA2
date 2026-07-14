@@ -834,9 +834,9 @@ input, textarea, select { font-family: inherit; }
   background: var(--clr-bg-dark);
 }
 .contact .section-label {
-  color: var(--clr-text-on-dark);
-  background: var(--clr-primary-glow);
-  border-color: rgba(73, 5, 24, 0.40);
+  color: var(--clr-bg);
+  background: rgba(230, 230, 207, 0.12);
+  border-color: rgba(230, 230, 207, 0.30);
 }
 .contact__inner {
   display: grid;
@@ -865,11 +865,11 @@ input, textarea, select { font-family: inherit; }
 .contact__detail-icon {
   width: 44px; height: 44px;
   border-radius: 12px;
-  background: var(--clr-primary-glow);
-  border: 1px solid rgba(73, 5, 24, 0.38);
+  background: rgba(230, 230, 207, 0.12);
+  border: 1px solid rgba(230, 230, 207, 0.30);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
-  color: var(--clr-primary);
+  color: var(--clr-bg);
 }
 .contact__detail-label {
   font-size: 0.75rem;
