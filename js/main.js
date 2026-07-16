@@ -239,14 +239,11 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // ── Intersection Observer — fade-in animations ────
+  // ── Intersection Observer — fade in/out on scroll ─
   const observerOpts = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        observer.unobserve(entry.target);
-      }
+      entry.target.classList.toggle('in-view', entry.isIntersecting);
     });
   }, observerOpts);
 
