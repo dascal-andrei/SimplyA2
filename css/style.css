@@ -33,7 +33,7 @@
 
   --clr-white:          #ffffff;
 
-  --font-heading: 'DM Serif Display', Georgia, serif;
+  --font-heading: 'Gloock', Georgia, serif;
   --font-body:    'Gloock', Georgia, serif;
 
   --radius:         12px;
@@ -604,7 +604,7 @@ input, textarea, select { font-family: inherit; }
 
 .portfolio__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 24px;
 }
 .portfolio-card--hidden {
